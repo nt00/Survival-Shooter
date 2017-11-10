@@ -15,7 +15,6 @@ public class PlayerUtility : MonoBehaviour
     private float cameraRotationX = 0f;
     private float currentCameraRotationX = 0f;
     private float jumpStrength = 5f;
-    private bool cursorVisible = true;
 
 
     private Rigidbody rigid;
@@ -24,35 +23,6 @@ public class PlayerUtility : MonoBehaviour
     {
         //Referencing Rigidbody
         rigid = GetComponent<Rigidbody>();
-    }
-
-    void Start()
-    {
-        // Initially start the game with the cursor locked and invisible
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void Update()
-    {
-        // Hiding and Showing mouse with escape toggle
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(cursorVisible == true)
-            {
-                // Unlocks the cursor and becomes visible
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            if(cursorVisible == false)
-            {
-                // Locks the cursor and becomes invisible
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-
-            cursorVisible = !cursorVisible;
-        }
     }
 
     void FixedUpdate()

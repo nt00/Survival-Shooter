@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
-    public float currentTime = 20f;
+    public float currentTime = 300f;
     public GUIStyle timerStyle;
     private float scrH, scrW;
 

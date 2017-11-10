@@ -12,19 +12,13 @@ public class InsectSprayWeapon : NetworkBehaviour
     private float fireRate = 0.75f;
     private float damage = 40f;
     private float nextTimeToFire = 0f;
-    public int shotgunFrag = 8;
-    public float bulletSpread = 10f;
-    public float impactForce = 40f;
+    private int shotgunFrag = 8;
+    private float bulletSpread = 10f;
+    private float impactForce = 40f;
 
     RaycastHit hit;
 
     public GameObject hitEffect;
-    public AudioSource shootSoundFX;
-
-    void Awake()
-    {
-        shootSoundFX = GetComponent<AudioSource>();
-    }
 
     void Update()
     {
@@ -39,9 +33,6 @@ public class InsectSprayWeapon : NetworkBehaviour
 
     void Shoot()
     {
-        //Play shooter sound effect
-        //shootSoundFX.Play();
-
         for (int i = 0; i < shotgunFrag; i++)
         {
             RaycastHit hit;

@@ -15,12 +15,6 @@ public class WaterGunWeapon : NetworkBehaviour
     private LayerMask mask;
 
     public GameObject hitEffect;
-    public AudioSource shootSoundFX;
-
-    void Awake()
-    {
-        shootSoundFX = GetComponent<AudioSource>();
-    }
 
     void Update()
     {
@@ -35,8 +29,6 @@ public class WaterGunWeapon : NetworkBehaviour
 
     void Shoot()
     {
-        //Play shooter sound effect
-        //shootSoundFX.Play();
         //Storing information about what we hit
         RaycastHit hit;
 

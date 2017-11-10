@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
         {
             PlayerDeath();
         }
-        // If player uses space key, player will jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        // If player uses the jump key, player will jump
+        if (Input.GetButtonDown("Jump"))
         {
             PlayerJump();
         }

@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
-public class EnemyManager : NetworkBehaviour
+public class SPEnemyManager : MonoBehaviour
 {
-    public Transform[] spawnPoints;         
     public GameObject[] enemyPrefabs;
-    public int enemyCount = 5; 
+    public Transform[] spawnPoints;
+    public int enemyCount = 5;
     public float spawnWait = 0.5f;
     public float startWait = 1f;
     public float waveWait = 5f;
     private bool gameOver;
 
-    public void Start()
+    void Start()
     {
         gameOver = false;
         StartCoroutine(SpawnWaves());
@@ -28,7 +28,7 @@ public class EnemyManager : NetworkBehaviour
         {
             for (int i = 0; i < enemyCount; i++)
             {
-                // Spawn position is determined randomly on the x axis
+                // Spawn position is determined randomly on the spawn points
                 int spawnPointIndex = Random.Range(0, spawnPoints.Length);
                 // Spawns random enemies
                 int prefab_num = Random.Range(0, enemyPrefabs.Length);
