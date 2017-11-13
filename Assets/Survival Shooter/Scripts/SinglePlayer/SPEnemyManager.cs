@@ -23,7 +23,7 @@ public class SPEnemyManager : MonoBehaviour
     {
         // Waits after game starts before spawning waves
         yield return new WaitForSeconds(startWait);
-        // Continously runs until game over
+        // Continously runs until game is over
         while (!gameOver)
         {
             for (int i = 0; i < enemyCount; i++)
